@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const IMAGE_URLS = [
   {
     id: 1,
@@ -23,9 +25,8 @@ export default function HomePage() {
       <div className="flex flex-wrap gap-4">
         {[...IMAGE_URLS, ...IMAGE_URLS, ...IMAGE_URLS, ...IMAGE_URLS].map(
           (image) => (
-            <div key={image.id} className="w-40">
-              {/* eslint-disable-next-line @next/next/no-img-element*/}
-              <img src={image.url} width="160" alt="image" />
+            <div key={image.id} className="h-32 w-40">
+              <Image src={image.url} width="160" height="128" alt="image" />
             </div>
           ),
         )}
